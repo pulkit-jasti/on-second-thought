@@ -1,0 +1,144 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		@apply bg-comic-cream text-comic-black;
+	}
+}
+
+@layer components {
+	/* Comic-style button with 3D layered shadow effect */
+	.btn-comic {
+		@apply px-6 py-3 font-bold uppercase tracking-wide;
+		@apply border-4 border-comic-black rounded-lg;
+		@apply shadow-comic-button;
+		@apply transition-all duration-150 ease-in-out;
+		@apply cursor-pointer select-none;
+	}
+
+	.btn-comic:hover:not(:disabled) {
+		@apply shadow-comic-button-hover;
+		transform: translate(2px, 2px);
+	}
+
+	.btn-comic:active:not(:disabled) {
+		@apply shadow-comic-button-active;
+		transform: translate(4px, 4px);
+	}
+
+	.btn-comic:disabled {
+		@apply opacity-60 cursor-not-allowed;
+	}
+
+	/* Primary button variant */
+	.btn-comic-primary {
+		@apply btn-comic bg-comic-yellow text-comic-black;
+	}
+
+	.btn-comic-primary:hover:not(:disabled) {
+		@apply bg-comic-yellow brightness-110;
+	}
+
+	/* Secondary button variant */
+	.btn-comic-secondary {
+		@apply btn-comic bg-comic-blue text-comic-white;
+	}
+
+	.btn-comic-secondary:hover:not(:disabled) {
+		@apply bg-comic-blue brightness-110;
+	}
+
+	/* Danger button variant */
+	.btn-comic-danger {
+		@apply btn-comic bg-comic-red text-comic-white;
+	}
+
+	.btn-comic-danger:hover:not(:disabled) {
+		@apply bg-comic-red brightness-110;
+	}
+
+	/* Comic-style panel/card */
+	.comic-panel {
+		@apply border-4 border-comic-black rounded-lg;
+		@apply shadow-comic bg-comic-white;
+		@apply p-6;
+	}
+
+	/* Comic-style input */
+	.comic-input {
+		@apply border-3 border-comic-black rounded-lg;
+		@apply px-4 py-3 text-lg;
+		@apply focus:outline-none focus:ring-4 focus:ring-comic-yellow;
+		@apply shadow-comic-sm;
+		@apply transition-shadow duration-150;
+	}
+
+	/* Comic-style speech bubble */
+	.comic-bubble {
+		@apply relative border-4 border-comic-black rounded-2xl;
+		@apply shadow-comic bg-comic-white;
+		@apply p-6;
+	}
+}
+
+@layer utilities {
+	/* Text shadow utilities */
+	.text-shadow-comic {
+		text-shadow: 4px 4px 0px rgba(0, 0, 0, 1);
+	}
+
+	.text-shadow-comic-lg {
+		text-shadow: 6px 6px 0px rgba(0, 0, 0, 1);
+	}
+
+	.text-shadow-comic-sm {
+		text-shadow: 2px 2px 0px rgba(0, 0, 0, 1);
+	}
+
+	/* Comic-style border utilities */
+	.border-comic {
+		@apply border-4 border-comic-black;
+	}
+
+	.border-comic-sm {
+		@apply border-3 border-comic-black;
+	}
+
+	/* Sharp corner utilities */
+	.sharp-corners {
+		border-radius: 0;
+	}
+
+	/* Comic book halftone dot pattern background */
+	.comic-dots {
+		background-image: radial-gradient(
+			circle,
+			rgba(0, 0, 0, 0.15) 1px,
+			transparent 1px
+		);
+		background-size: 20px 20px;
+		background-position: 0 0, 10px 10px;
+	}
+
+	/* Animated comic book halftone dot pattern background with bigger dots */
+	.comic-dots-animated {
+		background-image: radial-gradient(
+			circle,
+			rgba(0, 0, 0, 0.12) 2.5px,
+			transparent 2.5px
+		);
+		background-size: 30px 30px;
+		animation: dots-scroll 30s linear infinite;
+	}
+}
+
+@keyframes dots-scroll {
+	0% {
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 0 30px;
+	}
+}
