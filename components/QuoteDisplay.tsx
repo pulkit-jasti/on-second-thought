@@ -32,7 +32,7 @@ export default function QuoteDisplay({
 					className='absolute top-1 left-1 text-8xl sm:text-9xl font-bold text-comic-yellow leading-none'
 					style={{ textShadow: '4px 4px 0px rgba(0, 0, 0, 1)' }}
 				>
-					"
+					{`"`}
 				</div>
 
 				{/* Quote text */}
@@ -49,7 +49,7 @@ export default function QuoteDisplay({
 						right: 10,
 					}}
 				>
-					"
+					{`"`}
 				</div>
 			</div>
 
